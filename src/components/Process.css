@@ -1,0 +1,112 @@
+/* Container Styles */
+.process-container {
+  text-align: center;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  max-width: 900px;  /* Limits the width of the container */
+  margin: 0 auto;     /* Centers the container horizontally */
+}
+
+.process-title h1 {
+  font-size: 2.5rem;
+  margin: 20px 10px;
+  font-weight: bold;
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+}
+
+.process-title span {
+  font-style: italic;
+  color: red;
+  font-weight: bold;
+}
+
+.process-subtitle {
+  color: #cccccc;
+  font-size: 1rem;
+  margin-bottom: 60px; /* Reduced bottom margin */
+}
+
+.process-button {
+  border: 1px solid #111111;
+  background: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 15px;
+}
+
+.process-button:hover {
+  background-color: #666;
+}
+
+/* Step Styles */
+.process-steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px; /* Reduced gap between icons */
+  flex-wrap: wrap;  /* Ensures steps wrap on smaller screens */
+}
+
+.process-step {
+  max-width: 250px; /* Reduced max width */
+  width: 100%;  /* Ensures steps take full width in smaller screens */
+  text-align: center;
+}
+
+.process-step h3 {
+  margin: 15px 0;  /* Reduced margin */
+  font-size: 1.5rem; /* Slightly smaller font size */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffffea;
+}
+
+.step-description {
+  color: #aaaaaa;
+  font-size: 1.0rem;
+  margin-top: 5px; /* Reduced margin for step descriptions */
+}
+
+/* Icon Styles */
+.process-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px; /* Reduced bottom margin */
+}
+
+.process-icon {
+  font-size: 2.5rem;
+  color: #fc4444;
+  animation: moveUpDown 5s ease-in-out infinite;
+}
+
+/* Icon Animation */
+@keyframes moveUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .process-steps {
+    flex-direction: column;  /* Stack steps vertically on smaller screens */
+    align-items: center;
+    gap: 20px;  /* Adjust gap for smaller screens */
+  }
+
+  .process-step {
+    max-width: 100%;  /* Ensure each step takes full width on small screens */
+  }
+
+  .process-title h1 {
+    font-size: 2rem;  /* Slightly reduce title size for smaller screens */
+  }
+}

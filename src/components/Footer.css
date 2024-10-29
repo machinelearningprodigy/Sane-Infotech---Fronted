@@ -1,0 +1,114 @@
+/* General footer styling */
+.footer {
+  background-color: #000000;
+  color: #fff;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Adjust the container to ensure spacing and alignment */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left section with social icons */
+.footer-left {
+  flex: 1;
+}
+
+.footer-icon {
+  color: #fff;
+  font-size: 24px;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: #ff4d4d;
+}
+
+/* Center section for the dot, but we will position the text differently */
+.footer-center {
+  flex: 1;
+  position: relative;
+}
+
+.footer-center a {
+  display: none; /* Remove default display from center */
+}
+
+/* Position "Our Profile on Design Rush" at the bottom-left of the footer */
+.footer-bottom-left {
+  position: absolute;
+  bottom: 10px;
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+.footer-bottom-left a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-bottom-left a:hover {
+  color: #ff4d4d;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+/* Right section with links */
+.footer-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-links {
+  display: flex;
+}
+
+.footer-links-column {
+  margin-left: 20px;
+}
+
+.footer-links-column li {
+  list-style-type: none;
+  margin-bottom: 10px;
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+  font-size: 12px;
+}
+
+.footer-links-column li:first-child {
+  /* font-weight: bold; */
+  text-transform: uppercase;
+}
+
+.footer-links-column a {
+  color: #474747;
+  text-decoration: none;
+}
+
+.footer-links-column a:hover {
+  color: #ff4d4d;
+}
+
+.footer-links-column a,
+.footer-links-column .react-scroll-link {
+  cursor: pointer; /* Change cursor to pointer on hover */
+}

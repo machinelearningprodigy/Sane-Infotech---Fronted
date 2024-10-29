@@ -1,0 +1,126 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Services Section */
+.services-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.services-header {
+  margin-bottom: 60px;
+}
+
+.services-title {
+  font-size: 2.5rem; 
+  font-weight: bold;
+  margin-bottom: 10px;
+  /* font-weight: 100; */
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+}
+
+.services-title span {
+  font-style: italic;
+  color: red;
+  font-weight: bold;
+}
+
+.services-subtitle {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #bbb;
+}
+
+/* Service Button */
+.service-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.432);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  /* cursor: pointer; */
+  position: relative;
+}
+
+
+
+/* Service Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.service-card {
+  border-radius: 15px;
+  padding: 40px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-size: cover;
+  background-position: center;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+.service-card-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 200;
+  margin-bottom: 15px;
+}
+
+.service-card-desc {
+  text-align: center;
+  font-size: 0.5rem;
+  color: #ddd;
+}
+
+/* Card Backgrounds Based on the Image */
+
+/* The first card: Blue-ish background */
+.card-animation {
+  background: linear-gradient(135deg, rgba(10, 20, 40, 0.9), rgba(0, 0, 100, 0.7));
+}
+
+/* The second card: Red/Orange gradient */
+.card-rendering {
+  background: linear-gradient(135deg, rgba(100, 0, 10, 0.9), rgba(255, 50, 50, 0.7));
+}
+
+/* The third card: Dark red/orange gradient */
+.card-filming {
+  grid-column: span 2;
+  background: linear-gradient(135deg, rgba(50, 0, 0, 0.9), rgba(255, 80, 0, 0.7));
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-filming {
+    grid-column: span 1;
+  }
+
+  .services-title {
+    font-size: 2.5rem;
+  }
+
+  .service-card-title {
+    font-size: 1.6rem;
+  }
+}

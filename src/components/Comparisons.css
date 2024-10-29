@@ -1,0 +1,154 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.comparison-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.432);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  /* cursor: pointer; */
+  position: relative;
+}
+
+.comparison-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px; /* Reduced padding to fit the compact look */
+  text-align: center;
+}
+
+.comparison-header {
+  margin-bottom: 30px; /* Reduced margin */
+}
+
+.comparison-title {
+  margin-top: 25px;
+  font-size: 2.5rem; 
+  font-weight: bold;
+  margin-bottom: 10px;
+  /* font-weight: 100; */
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+}
+
+.comparison-title span {
+  font-style: italic;
+  color: red;
+  font-weight: bold;
+}
+
+.comparison-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 55px; /* Reduced margin */
+}
+
+.comparison-switch span {
+  font-size: 2rem; /* Reduced font size */
+  color: #666;
+}
+
+.skitbit-label {
+  font-size: 1rem; /* Adjusted for smaller layout */
+  display: flex;
+  align-items: center;
+}
+
+.skitbit-logo {
+  height: 40px;
+  margin-left: 300px;
+}
+
+/* Comparison Grid */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px; /* Reduced grid gap */
+  text-align: left;
+}
+
+.comparison-card {
+  background-color: #1c1c1c;
+  padding: 30px; /* Reduced padding */
+  border-radius: 12px; /* Adjusted radius */
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto; /* Let the content dictate height */
+}
+
+.comparison-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comparison-card li {
+  margin-bottom: 15px; /* Reduced spacing */
+  font-size: 1rem; /* Reduced font size */
+  color: #ddd;
+  display: flex;
+  align-items: center;
+}
+
+.comparison-card li span {
+  font-size: 1.2rem; /* Reduced bullet size */
+  margin-right: 8px; /* Adjusted margin */
+}
+
+/* Other Agencies Card */
+.card-other {
+  background: radial-gradient(
+    circle at top left,
+    rgba(40, 40, 40, 0.9),
+    rgba(0, 0, 0, 0.8)
+  );
+}
+
+.card-other li span {
+  color: #fff;
+  opacity: 0.5;
+}
+
+/* Skitbit Card */
+.card-skitbit {
+  background: radial-gradient(
+    circle at top right,
+    rgba(255, 50, 50, 0.9),
+    rgba(0, 0, 0, 0.8)
+  );
+}
+
+.card-skitbit li span {
+  color: #ff4444;
+}
+
+.comparison-card:hover {
+  transform: translateY(-7px); /* Reduced hover effect */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25); /* Softer shadow */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-title {
+    font-size: 1.8rem; /* Adjusted title size for small screens */
+  }
+
+  .comparison-card {
+    padding: 20px; /* Reduced padding for smaller screens */
+  }
+
+  .comparison-card li {
+    font-size: 0.9rem; /* Adjusted text size */
+  }
+}

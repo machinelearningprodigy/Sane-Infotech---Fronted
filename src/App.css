@@ -1,0 +1,11 @@
+/* App.css */
+
+/* Apply black background to the whole page */
+body {
+    background-color: #000;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    color: #fff; /* Optional: Set default text color to white for contrast */
+    font-family: Arial, sans-serif; /* Optional: Set a default font */
+  }
+  

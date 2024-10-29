@@ -1,0 +1,93 @@
+.message {
+  color: #757575;
+  font-size: 1.0em;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Company Carousel Styles */
+.company-carousel {
+  background-color: #000; /* Fully dark background */
+  padding: 20px 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 -10px 20px rgba(255, 255, 255, 0.2), /* Top white shadow */
+              0 4px 8px rgba(0, 0, 0, 0.2); /* Bottom black shadow */
+  border-radius: 0; /* Remove any rounded corners */
+  position: relative;
+}
+
+/* "Rain" effect - white shadows falling */
+.company-carousel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(white 1px, transparent 1px) 50% 50%;
+  background-size: 10px 10px;
+  opacity: 0.05; /* Subtle shadow effect */
+  animation: rain 5s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rain {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Company Container */
+.company-container {
+  display: flex;
+  animation: scroll 60s linear infinite;  /* Slow scrolling */
+  position: relative;
+  z-index: 1; /* Ensure companies are above the rain effect */
+}
+
+/* Individual Company Styling */
+.company {
+  color: #e0e0e0; /* Lighter, classic white color */
+  font-size: 1.2em;
+  font-family: 'Times New Roman', serif; /* Classic font */
+  margin: 0 50px; /* Space between companies */
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background: none; /* Remove background */
+  padding: 0; /* Remove padding */
+  box-shadow: none; /* No default shadow */
+}
+
+/* Company Icon */
+.company-icon {
+  font-size: 2.0em; /* Icon size */
+  margin-right: 10px;
+  font-weight: bolder;
+}
+
+/* Hover Effect */
+.company:hover {
+  transform: scale(1.2); /* Enlarge slightly on hover */
+  cursor: pointer;
+  text-shadow: 0 0 15px rgb(255, 251, 0); /* Glowing text shadow */
+}
+
+/* Scroll Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

@@ -1,0 +1,40 @@
+.refundContainer {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  .refundTitle {
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4b0082;
+  }
+  
+  .refundBreadcrumb {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    color: #4b0082;
+  }
+  
+  .refundBreadcrumbLink {
+    color: #4b0082;
+    text-decoration: none;
+  }
+  
+  .refundContent {
+    padding: 2rem;
+  }
+  
+  .refundContentText {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .emailLink {
+    color: #4b0082;
+    text-decoration: none;
+  }
+  

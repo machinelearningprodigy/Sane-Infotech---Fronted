@@ -1,0 +1,49 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #000;
+    color: white;
+  }
+  
+  .about-content {
+    max-width: 1050px;
+  }
+  
+  .about-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    /* font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+  }
+  
+  
+  .cta-button {
+    background-color: red;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #ff4d4d;
+  }
+  
+  .cta-button span {
+    margin-left: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .space-below {
+    height: 150px;
+    background-color: transparent;
+  }
+  

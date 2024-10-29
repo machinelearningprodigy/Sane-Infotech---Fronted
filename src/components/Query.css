@@ -1,0 +1,124 @@
+/* General styling for the query component */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.query-list {
+  width: 55%;
+  margin: 50px auto 0 auto; /* Adds gap from top */
+  /* background-color: #111; */
+  color: #fff;
+}
+
+.query {
+  border: 0.5px solid #b8b6b63d;
+  margin-bottom: 15px; /* Adds space between each box */
+  border-radius: 13px;
+  overflow: hidden; /* Ensures content stays inside the box */
+  transition: all 0.3s ease;
+}
+
+.query-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  background-color: #0d0d0d;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.query-toggle {
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.query-answer {
+  font-size: 0.8rem;
+  padding: 20px;
+  background-color: #0d0d0d;
+  max-height: 300px; /* Limit the height for smooth transition */
+  color: #ddd;
+}
+
+.query-answer p {
+  margin: 0;
+}
+
+.query-header h3 {
+  /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
+  color: rgb(243, 243, 243);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* Add some hover effect for better interaction */
+.query-header:hover {
+  background-color: #0d0d0d;
+}
+
+.query-header:hover .query-toggle {
+  color: #f00; /* Optional: Red on hover for + or - */
+}
+
+/* Styling for when the box is open */
+.query.open {
+  background-color: #0d0d0d;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Call to Action Box Styling */
+.cta-box {
+  background-color: #000000d5;
+  padding: 40px 20px;
+  border-radius: 12px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #333333af;
+  /* width: 100%; Adjust the width as needed */
+
+}
+
+.cta-title {
+  font-size: 2.5rem; 
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-weight: bold;
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+}
+
+.cta-highlight {
+  font-style: italic;
+  font-family: "Georgia", serif;
+  color: #f00;
+  font-weight: bold;
+}
+
+.cta-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.cta-button {
+  background-color: #f00;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #d00;
+}

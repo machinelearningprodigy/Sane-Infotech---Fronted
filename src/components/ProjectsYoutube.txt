@@ -1,0 +1,669 @@
+CSS
+
+.projects-section {
+  background-color: #000000;
+  padding: 40px 20px;
+  color: #fff;
+  position: relative;
+}
+
+.projects-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.our-clients-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.432);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.italic-text {
+  font-style: italic;
+  font-weight: bold;
+  color: red;
+}
+
+.projects-subtitle {
+  font-size: 20px;
+  color: #ccccccbe;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.projects-container::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+.project-card {
+  flex: 0 0 calc(33.333% - 20px);
+  min-width: 300px;
+  background-color: #1313138c;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.thumbnail-wrapper {
+  position: relative;
+  padding: 10px;
+}
+
+.thumbnail-container {
+  position: relative;
+  padding-top: 100%; /* 1:1 aspect ratio */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-icon-container {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-icon-container svg {
+  color: white;
+  font-size: 20px;
+}
+
+.project-info {
+  padding: 15px;
+}
+
+.company-icon-container {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.company-icon-container svg {
+  color: white;
+  font-size: 20px;
+}
+
+.project-info h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.project-info .project-title {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-info .project-title:hover {
+  color: red;
+}
+
+.description {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 10;
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-button.prev {
+  left: 10px;
+}
+
+.nav-button.next {
+  right: 10px;
+}
+
+@media (max-width: 1024px) {
+  .project-card {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    flex: 0 0 100%;
+  }
+}
+
+
+
+
+JAVASCRIPT
+// import React, { useState, useRef, useEffect } from 'react';
+// import { FaChevronLeft, FaChevronRight, FaMagic, FaStethoscope, FaWatchmanMonitoring, FaGem, FaShieldAlt, FaYoutube } from 'react-icons/fa';
+// import './Projects.css';
+
+// const projectData = [
+//   {
+//     title: "Concealer - 3D Product Animation",
+//     company: "SHAKEUP",
+//     companyIcon: <FaMagic />,
+//     description: "Our task? To create visuals that didn't just compete but dominated",
+//     additionalText: "Our visuals surpassed expectations, elevating the brand above its competitors.",
+//     videoThumbnail: "https://img.youtube.com/vi/-1GB6m39-rM/maxresdefault.jpg",
+//     videoUrl: "https://www.youtube.com/watch?v=-1GB6m39-rM",
+//     categoryIcon: <FaYoutube />
+//   },
+//   {
+//     title: "Product Launch Presentation",
+//     company: "YAMAHA",
+//     companyIcon: <FaWatchmanMonitoring />,
+//     description: "These guy don't mess around. we saw results from month one. If you want to grow your business, look no further.",
+//     additionalText: "Tony Gomez\nFounder of Thursday",
+//     videoThumbnail: "https://img.youtube.com/vi/_Ar6_N5f5zw/maxresdefault.jpg",
+//     videoUrl: "https://www.youtube.com/watch?v=_Ar6_N5f5zw",
+//     categoryIcon: <FaYoutube />
+//   },
+//   {
+//     title: "CGI Sneakers - 3D Product",
+//     company: "NEEMAN'S",
+//     companyIcon: <FaGem />,
+//     description: "From where we were before. Conversion to where we are now, it's absolutely apart.",
+//     additionalText: "Charlotte Johansen\nFounder of Tuesday",
+//     videoThumbnail: "https://img.youtube.com/vi/QPACTQBPuvg/maxresdefault.jpg",
+//     videoUrl: "https://www.youtube.com/watch?v=QPACTQBPuvg",
+//     categoryIcon: <FaYoutube />
+//   }
+// ];
+
+// const ProjectCard = ({ project }) => (
+//   <div className="project-card">
+//     <div className="thumbnail-wrapper">
+//       <div className="thumbnail-container">
+//         <img src={project.videoThumbnail} alt={project.title} className="video-thumbnail" />
+//         <div className="play-button"></div>
+//       </div>
+//       <div className="category-icon-container">
+//         {project.categoryIcon}
+//       </div>
+//     </div>
+//     <div className="project-info">
+//       <div className="company-icon-container">
+//         {project.companyIcon}
+//       </div>
+//       <h3>{project.company}</h3>
+//       <p className="description">{project.description}</p>
+//     </div>
+//   </div>
+// );
+
+// const Projects = () => {
+//   const [scrollPosition, setScrollPosition] = useState(0);
+//   const containerRef = useRef(null);
+
+//   const handleScroll = (direction) => {
+//     const container = containerRef.current;
+//     const scrollAmount = direction === 'left' ? -container.offsetWidth : container.offsetWidth;
+//     const newPosition = scrollPosition + scrollAmount;
+    
+//     container.scrollTo({
+//       left: newPosition,
+//       behavior: 'smooth'
+//     });
+    
+//     setScrollPosition(newPosition);
+//   };
+
+//   const showLeftButton = scrollPosition > 0;
+//   const showRightButton = containerRef.current && 
+//     scrollPosition < containerRef.current.scrollWidth - containerRef.current.offsetWidth;
+
+//   return (
+//     <section id="clients" className="projects-section">
+//       {/* Top Section */}
+//       <div className="projects-header">
+//         <button className="our-clients-button">Our Clients</button>
+//         <div className="red-dot"></div>
+//         <h2 className="projects-title">
+//           Check Out Our Recent <span className="italic-text">Projects</span>.
+//         </h2>
+//         <p className="projects-subtitle">
+//           Witness our project outcomes. Our work speaks volumes<br/> about our expertise.
+//         </p>
+//       </div>
+
+//       {/* Projects Cards Section */}
+//       <div className="projects-container" ref={containerRef}>
+//         {projectData.map((project, index) => (
+//           <ProjectCard key={index} project={project} />
+//         ))}
+//       </div>
+
+//       {/* Navigation Buttons */}
+//       {showLeftButton && (
+//         <button className="nav-button prev" onClick={() => handleScroll('left')}>
+//           <FaChevronLeft />
+//         </button>
+//       )}
+//       {showRightButton && (
+//         <button className="nav-button next" onClick={() => handleScroll('right')}>
+//           <FaChevronRight />
+//         </button>
+//       )}
+//     </section>
+//   );
+// };
+
+// export default Projects;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THE FOLLOWING IS THE CSS AND JS FOR PHOTOS OF 1:1
+.projects-section {
+  background-color: #000000;
+  padding: 40px 20px;
+  color: #fff;
+  position: relative;
+}
+
+.projects-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.our-clients-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.432);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.italic-text {
+  font-style: italic;
+  font-weight: bold;
+  color: red;
+}
+
+.projects-subtitle {
+  font-size: 20px;
+  color: #ccccccbe;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.projects-container::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+.project-card {
+  flex: 0 0 calc(33.333% - 20px);
+  min-width: 300px;
+  background-color: #1313138c;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.thumbnail-wrapper {
+  position: relative;
+  padding: 10px;
+}
+
+.thumbnail-container {
+  position: relative;
+  padding-top: 100%; /* 1:1 aspect ratio */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-icon-container {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-icon-container svg {
+  color: white;
+  font-size: 20px;
+}
+
+.project-info {
+  padding: 15px;
+}
+
+.company-icon-container {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.company-icon-container svg {
+  color: white;
+  font-size: 20px;
+}
+
+.project-info h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.project-info .project-title {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-info .project-title:hover {
+  color: red;
+}
+
+.description {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 10;
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-button.prev {
+  left: 10px;
+}
+
+.nav-button.next {
+  right: 10px;
+}
+
+@media (max-width: 1024px) {
+  .project-card {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    flex: 0 0 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React, { useState, useRef } from 'react';
+import { FaChevronLeft, FaChevronRight, FaMagic, FaStethoscope, FaWatchmanMonitoring, FaGem, FaShieldAlt } from 'react-icons/fa';
+import './Projects.css';
+
+const projectData = [
+  {
+    title: "Concealer - 3D Product Animation",
+    company: "SHAKEUP",
+    companyIcon: <FaMagic />,
+    description: "Our task? To create visuals that didn't just compete but dominated",
+    additionalText: "Our visuals surpassed expectations, elevating the brand above its competitors.",
+    imageUrl: "/images/concealer.jpg", // Path to local image (replace with actual image path)
+    projectUrl: "https://www.project-link.com/concealer", // Link to the project
+    categoryIcon: <FaShieldAlt />
+  },
+  {
+    title: "Product Launch Presentation",
+    company: "YAMAHA",
+    companyIcon: <FaWatchmanMonitoring />,
+    description: "These guys don't mess around. We saw results from month one. If you want to grow your business, look no further.",
+    additionalText: "Tony Gomez\nFounder of Thursday",
+    imageUrl: "/images/yamaha.jpg", // Path to local image (replace with actual image path)
+    projectUrl: "https://www.project-link.com/yamaha",
+    categoryIcon: <FaGem />
+  },
+  {
+    title: "CGI Sneakers - 3D Product",
+    company: "NEEMAN'S",
+    companyIcon: <FaGem />,
+    description: "From where we were before, conversion to where we are now, it's absolutely apart.",
+    additionalText: "Charlotte Johansen\nFounder of Tuesday",
+    imageUrl: "/images/sneakers.jpg", // Path to local image (replace with actual image path)
+    projectUrl: "https://www.project-link.com/sneakers",
+    categoryIcon: <FaShieldAlt />
+  }
+];
+
+const ProjectCard = ({ project }) => (
+  <div className="project-card">
+    <a href={project.projectUrl} target="_blank" rel="noopener noreferrer">
+      <div className="thumbnail-wrapper">
+        <div className="thumbnail-container">
+          <img src={project.imageUrl} alt={project.title} className="project-image" />
+        </div>
+        <div className="category-icon-container">
+          {project.categoryIcon}
+        </div>
+      </div>
+    </a>
+    <div className="project-info">
+      <div className="company-icon-container">
+        {project.companyIcon}
+      </div>
+      <h3>
+        <a href={project.projectUrl} target="_blank" rel="noopener noreferrer" className="project-title">
+          {project.title}
+        </a>
+      </h3>
+      <p className="description">{project.description}</p>
+    </div>
+  </div>
+);
+
+const Projects = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const containerRef = useRef(null);
+
+  const handleScroll = (direction) => {
+    const container = containerRef.current;
+    const scrollAmount = direction === 'left' ? -container.offsetWidth : container.offsetWidth;
+    const newPosition = scrollPosition + scrollAmount;
+    
+    container.scrollTo({
+      left: newPosition,
+      behavior: 'smooth'
+    });
+    
+    setScrollPosition(newPosition);
+  };
+
+  const showLeftButton = scrollPosition > 0;
+  const showRightButton = containerRef.current && 
+    scrollPosition < containerRef.current.scrollWidth - containerRef.current.offsetWidth;
+
+  return (
+    <section id="clients" className="projects-section">
+      {/* Top Section */}
+      <div className="projects-header">
+        <button className="our-clients-button">Our Clients</button>
+        <div className="red-dot"></div>
+        <h2 className="projects-title">
+          Check Out Our Recent <span className="italic-text">Projects</span>.
+        </h2>
+        <p className="projects-subtitle">
+          Witness our project outcomes. Our work speaks volumes<br/> about our expertise.
+        </p>
+      </div>
+
+      {/* Projects Cards Section */}
+      <div className="projects-container" ref={containerRef}>
+        {projectData.map((project, index) => (
+          <ProjectCard key={index} project={project} />
+        ))}
+      </div>
+
+      {/* Navigation Buttons */}
+      {showLeftButton && (
+        <button className="nav-button prev" onClick={() => handleScroll('left')}>
+          <FaChevronLeft />
+        </button>
+      )}
+      {showRightButton && (
+        <button className="nav-button next" onClick={() => handleScroll('right')}>
+          <FaChevronRight />
+        </button>
+      )}
+    </section>
+  );
+};
+
+export default Projects;

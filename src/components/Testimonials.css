@@ -1,0 +1,142 @@
+/* Base setup for testimonials section */
+.testimonials-section {
+  background-color: #000000;
+  color: #fff;
+  padding: 100px 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-button{
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.432);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  /* cursor: pointer; */
+  position: relative;
+}
+
+.testimonials-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+.testimonials-heading span {
+  color: red;
+  font-style: italic;
+}
+
+/* Testimonials container setup */
+.testimonials-container {
+  display: flex;
+  justify-content: space-around;
+  height: 400px;
+  overflow: hidden;
+}
+
+/* Each testimonial column */
+.testimonials-column {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  gap: 10px;
+}
+
+/* Individual testimonial cards with transparent background */
+.testimonial-card {
+  background-color: #0d0d0d; /* Transparent background */
+  padding: 10px;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  font-size: 0.8rem; /* Smaller text */
+}
+
+.testimonial-card:hover {
+  transform: scale(1.05);
+}
+
+/* Icon styling */
+.icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+/* Quote styling */
+.quote {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Name and title styling */
+.name {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 0.75rem;
+  color: #aaa;
+  text-align: center;
+}
+
+/* Continuous Upward movement for testimonials */
+.move-up {
+  animation: moveUp 20s infinite linear;
+}
+
+/* Continuous Downward movement for testimonials */
+.move-down {
+  animation: moveDown 20s infinite linear;
+}
+
+/* Keyframes for upward movement */
+@keyframes moveUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* Keyframes for downward movement */
+@keyframes moveDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .testimonials-heading {
+    font-size: 2rem;
+  }
+
+  .testimonial-card {
+    width: 80%;
+  }
+
+  .testimonials-container {
+    flex-direction: column;
+  }
+
+  .testimonials-column {
+    width: 100%;
+  }
+}

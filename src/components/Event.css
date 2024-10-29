@@ -1,0 +1,118 @@
+.event-container {
+    display: flex;
+    background-color: #181818;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .event-sidebar {
+    width: 30%;
+    padding: 20px;
+    background-color: #202020;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .event-sidebar h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .event-sidebar h3 {
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 5px;
+  }
+  
+  .event-details p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .event-details p span {
+    margin-right: 10px;
+  }
+  
+  .calendar-section {
+    width: 35%;
+    padding: 20px;
+  }
+  
+  .custom-calendar {
+    background-color: #222;
+    color: white;
+    border: none;
+    width: 100%;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .calendar-nav {
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+  }
+  
+  .time-slots {
+    width: 35%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .toggle-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+  
+  .toggle-btn {
+    border: none;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .toggle-btn.active {
+    background-color: #888;
+  }
+  
+  .slots {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .time-slot {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .time-slot:hover {
+    background-color: #555;
+  }
+  
+  .calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: #888;
+  }
+  
+  .icon-settings, .icon-calendar {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
