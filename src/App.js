@@ -118,9 +118,139 @@
 
 
 
-import React, { useRef, useEffect } from 'react';
+// import React, { useRef, useEffect } from 'react';
+// import './App.css';
+// import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+// import Navbar from './components/Navbar';
+// import LandingPage from './components/LandingPage';
+// import CompanyCarousel from './components/CompanyCarousel';
+// import Projects from './components/Projects';
+// import Services from './components/Services';
+// import Comparisons from './components/Comparisons';
+// import Process from './components/Process';
+// import Testimonials from './components/Testimonials';
+// import QueryList from './components/Query';
+// import Footer from './components/Footer';
+// import About from './components/About';
+// import Terms from './components/Terms';
+// import Privacy from './components/Privacy'; // Import the new Privacy component
+// import Refund from './components/Refund';
+// import Contact from './components/Contact';
+// import Event from './components/Event';
+
+// function ScrollToTop() {
+//   const { pathname } = useLocation();
+
+//   useEffect(() => {
+//     window.scrollTo(0, 0);
+//   }, [pathname]);
+
+//   return null;
+// }
+
+// function App() {
+//   // Create refs for each section
+//   const landingPageRef = useRef(null);
+//   const aboutRef = useRef(null);
+//   const servicesRef = useRef(null);
+//   const ourClientsRef = useRef(null);
+//   const contactRef = useRef(null);
+
+//   // Function to handle smooth scrolling
+//   const scrollToSection = (section) => {
+//     const refMap = {
+//       landingPage: landingPageRef,
+//       about: aboutRef,
+//       services: servicesRef,
+//       ourClients: ourClientsRef,
+//       contact: contactRef
+//     };
+
+//     const ref = refMap[section];
+//     if (ref && ref.current) {
+//       ref.current.scrollIntoView({ behavior: 'smooth' });
+//     }
+//   };
+
+//   return (
+//     <Router>
+//       <ScrollToTop />
+//       <div className="App">
+//         <Navbar scrollToSection={scrollToSection} />
+        
+//         <Routes>
+//           <Route
+//             path="/"
+//             element={
+//               <>
+//                 <div ref={landingPageRef}>
+//                   <LandingPage />
+//                 </div>
+
+//                 <div className="carousel-section">
+//                   <CompanyCarousel />
+//                 </div>
+
+//                 <div ref={aboutRef}>
+//                   <About />
+//                 </div>
+
+//                 <div ref={servicesRef}>
+//                   <Services />
+//                 </div>
+
+//                 <div ref={ourClientsRef}>
+//                   <Projects />
+//                 </div>
+
+//                 <div className="comparisons">
+//                   <Comparisons />
+//                 </div>
+
+//                 <div className="process">
+//                   <Process />
+//                 </div>
+
+//                 <div className="testimonials">
+//                   <Testimonials />
+//                 </div>
+
+//                 <div className="queryList">
+//                   <QueryList />
+//                 </div>
+//               </>
+//             }
+//           />
+//           <Route path="/contact" element={<Contact />} /> 
+//           <Route path="/terms" element={<Terms />} />
+//           <Route path="/privacy" element={<Privacy />} /> {/* Add the new Privacy route */}
+//           <Route path="/refund" element={<Refund />} /> {/* Add the new Privacy route */}
+//         </Routes>
+
+//         <Footer />
+//       </div>
+//     </Router>
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+// VERSION 3
+import React, { useRef } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
 import CompanyCarousel from './components/CompanyCarousel';
@@ -133,37 +263,28 @@ import QueryList from './components/Query';
 import Footer from './components/Footer';
 import About from './components/About';
 import Terms from './components/Terms';
-import Privacy from './components/Privacy'; // Import the new Privacy component
+import Privacy from './components/Privacy';
 import Refund from './components/Refund';
 import Contact from './components/Contact';
-import Event from './components/Event';
-
-function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-}
 
 function App() {
-  // Create refs for each section
   const landingPageRef = useRef(null);
   const aboutRef = useRef(null);
   const servicesRef = useRef(null);
   const ourClientsRef = useRef(null);
+  const processRef = useRef(null); // New ref for Process
+  const testimonialsRef = useRef(null); // New ref for Testimonials
   const contactRef = useRef(null);
 
-  // Function to handle smooth scrolling
   const scrollToSection = (section) => {
     const refMap = {
       landingPage: landingPageRef,
       about: aboutRef,
       services: servicesRef,
       ourClients: ourClientsRef,
-      contact: contactRef
+      process: processRef, // Add to ref mapping
+      testimonials: testimonialsRef, // Add to ref mapping
+      contact: contactRef,
     };
 
     const ref = refMap[section];
@@ -174,7 +295,6 @@ function App() {
 
   return (
     <Router>
-      <ScrollToTop />
       <div className="App">
         <Navbar scrollToSection={scrollToSection} />
         
@@ -207,11 +327,11 @@ function App() {
                   <Comparisons />
                 </div>
 
-                <div className="process">
+                <div ref={processRef} className="process"> {/* Update: Added ref */}
                   <Process />
                 </div>
 
-                <div className="testimonials">
+                <div ref={testimonialsRef} className="testimonials"> {/* Update: Added ref */}
                   <Testimonials />
                 </div>
 
@@ -221,13 +341,13 @@ function App() {
               </>
             }
           />
-          <Route path="/contact" element={<Contact />} /> 
+          <Route path="/contact" element={<Contact />} />
           <Route path="/terms" element={<Terms />} />
-          <Route path="/privacy" element={<Privacy />} /> {/* Add the new Privacy route */}
-          <Route path="/refund" element={<Refund />} /> {/* Add the new Privacy route */}
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/refund" element={<Refund />} />
         </Routes>
 
-        <Footer />
+        <Footer scrollToSection={scrollToSection} />
       </div>
     </Router>
   );

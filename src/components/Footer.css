@@ -61,17 +61,6 @@
   color: #ff4d4d;
 }
 
-@keyframes pulse {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.5);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
 /* Right section with links */
 .footer-right {
   flex: 1;
@@ -90,25 +79,24 @@
 .footer-links-column li {
   list-style-type: none;
   margin-bottom: 10px;
-  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
   font-size: 12px;
 }
 
 .footer-links-column li:first-child {
-  /* font-weight: bold; */
   text-transform: uppercase;
 }
 
 .footer-links-column a {
-  color: #474747;
+  color: #fff; /* Change this to white */
   text-decoration: none;
+  cursor: pointer; /* Change cursor to pointer */
 }
 
 .footer-links-column a:hover {
   color: #ff4d4d;
 }
 
-.footer-links-column a,
-.footer-links-column .react-scroll-link {
+/* Change cursor on hover for the links */
+.footer-links-column li:hover {
   cursor: pointer; /* Change cursor to pointer on hover */
 }
