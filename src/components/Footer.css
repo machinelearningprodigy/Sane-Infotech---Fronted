@@ -30,7 +30,7 @@
 }
 
 .footer-icon:hover {
-  color: #ff4d4d;
+  color: red;
 }
 
 /* Center section for the dot, but we will position the text differently */
@@ -93,7 +93,7 @@
 }
 
 .footer-links-column a:hover {
-  color: #ff4d4d;
+  color: red;
 }
 
 /* Change cursor on hover for the links */
